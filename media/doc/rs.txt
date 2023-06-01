@@ -1,0 +1,29 @@
+Neelam Choudhary
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+00:39:39
+
+<div class="col-sm-4 bg-light">
+    <h4 class=" text-center m-5"><u>List of Uploaded Resume </u></h4>
+    {% for candidate in candidates %}
+     {{candidate.id}} : <a href="{% url 'candidate' candidate.id %}">{{candidate.name}}</a>
+     <hr>
+    {% endfor %}
+   </div>
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+<div class="col-sm-4 bg-light">
+    <h4 class=" text-center m-5"><u>List of Uploaded Resume </u></h4>
+    {% for candidate in candidates %}
+     {{candidate.id}} : <a href="{% url 'candidate' candidate.id %}">{{candidate.name}}</a>
+     <hr>
+    {% endfor %}
+   </div>
+

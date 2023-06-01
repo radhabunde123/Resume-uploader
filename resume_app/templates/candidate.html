@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+   <div class="row">
+    <div class="col-sm-10 shadow p-5 offset-sm-1"  style="background-color:rgb(211, 170, 170);">
+     <h3 class="text-center "><u>RESUME</u></h3>
+     {% if fm.profile_image %}
+     <img src="{{fm.profile_image.url}}" alt="" class="img-fluid img-thumbnail float-end mt-4" width="150" height="150">
+     {% endif %} 
+    <p>Name:  {{fm.name}}</p>
+    <p>Date of Birth:  {{fm.dob}} </p>
+    <p>Email:  {{fm.email}} </p>
+    <p> Contact NO:  {{fm.mobile}}</p>
+    <p>Educations:  {{fm.qualification}}</p>
+    <p>Experience:  {{fm.experience}}</p>
+    <p> Address:    {{fm.locality}},{{fm.city}},Pin:{{fm.pin}},{{fm.state}}</p><br>
+    {% if fm.my_file %}
+    <p>Attachment: <a href="{{fm.my_file.url}}">Download File</a></p>
+    {% endif %}
+<a href="{% url 'update' fm.id %}" class="btn btn-danger">Update </a>
+<!-- in this we can see id in urls -->
+<form action="{% url 'Delete' fm.id %}" method="post" class="d-inline"> {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <!-- (form action type is used for not showing id in url) -->
+    <input type="submit" class="btn btn-danger" value="Back">
+</form>
+</div>
+
+
+{% endblock content %}
+</div>

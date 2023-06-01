@@ -1,0 +1,523 @@
+
+
+class Resume(models.Model):
+ user=models.ForeignKey(User,on_delete=models.CASCADE)
+ name = models.CharField(max_length=100)
+ dob = models.DateField(auto_now=False, auto_now_add=False,null=True)
+ gender = models.CharField(max_length=100)
+ locality = models.CharField(max_length=100)
+ city = models.CharField(max_length=100)
+ pin = models.PositiveIntegerField()
+ state = models.CharField(choices=STATE_CHOICE, max_length=50)
+ mobile = models.PositiveIntegerField()
+ email = models.EmailField()
+ job_city = models.CharField(max_length=50)
+ profile_image = models.ImageField(upload_to='profileimg', blank=True)
+ my_file = models.FileField(upload_to='doc', blank=True) # even we can leave it blank
+GENDER_CHOICES = [
+ ('Male', 'Male'),
+ ('Female', 'Female')
+]
+
+JOB_CITY_CHOICE = [
+ ('Delhi', 'Delhi'),
+ ('Pune', 'Pune'),
+ ('Ranchi', 'Ranchi'),
+ ('Mumbai', 'Mumbai'),
+ ('Dhanbad', 'Dhanbad'),
+ ('Banglore', 'Banglore')
+]
+
+class ResumeForm(forms.ModelForm):
+ gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect)
+ job_city = forms.MultipleChoiceField(label='Preferred Job Locations', choices=JOB_CITY_CHOICE, widget=forms.CheckboxSelectMultiple)
+ 
+ class Meta:
+  model = Resume
+  fields = ['name', 'dob', 'gender', 'locality', 'city', 'pin', 'state', 'mobile', 'email', 'job_city', 'profile_image', 'my_file']
+  labels = {'name':'Full Name', 'dob': 'Date of Birth', 'pin':'Pin Code', 'mobile':'Mobile No.', 'email':'Email ID', 'profile_image':'Profile Image', 'my_file':'Document'}
+  widgets = {
+   'name':forms.TextInput(attrs={'class':'form-control'}),
+   'dob':forms.DateInput(attrs={'class':'form-control', 'id':'datepicker'}),
+   'locality':forms.TextInput(attrs={'class':'form-control'}),
+   'ci
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   $( function() {
+     $( "#datepicker" ).datepicker();
+   } );
+  </script>
+
+***************************************
+You are viewing Neelam Choudhary's screen
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+23:50:25
+
+class Resume(models.Model):
+ user=models.ForeignKey(User,on_delete=models.CASCADE)
+ name = models.CharField(max_length=100)
+ dob = models.DateField(auto_now=False, auto_now_add=False,null=True)
+ gender = models.CharField(max_length=100)
+ locality = models.CharField(max_length=100)
+ city = models.CharField(max_length=100)
+ pin = models.PositiveIntegerField()
+ state = models.CharField(choices=STATE_CHOICE, max_length=50)
+ mobile = models.PositiveIntegerField()
+ email = models.EmailField()
+ job_city = models.CharField(max_length=50)
+ profile_image = models.ImageField(upload_to='profileimg', blank=True)
+ my_file = models.FileField(upload_to='doc', blank=True) # even we can leave it blank
+GENDER_CHOICES = [
+ ('Male', 'Male'),
+ ('Female', 'Female')
+]
+
+JOB_CITY_CHOICE = [
+ ('Delhi', 'Delhi'),
+ ('Pune', 'Pune'),
+ ('Ranchi', 'Ranchi'),
+ ('Mumbai', 'Mumbai'),
+ ('Dhanbad', 'Dhanbad'),
+ ('Banglore', 'Banglore')
+]
+
+class ResumeForm(forms.ModelForm):
+ gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect)
+ job_city = forms.MultipleChoiceField(label='Preferred Job Locations', choices=JOB_CITY_CHOICE, widget=forms.CheckboxSelectMultiple)
+ 
+ class Meta:
+  model = Resume
+  fields = ['name', 'dob', 'gender', 'locality', 'city', 'pin', 'state', 'mobile', 'email', 'job_city', 'profile_image', 'my_file']
+  labels = {'name':'Full Name', 'dob': 'Date of Birth', 'pin':'Pin Code', 'mobile':'Mobile No.', 'email':'Email ID', 'profile_image':'Profile Image', 'my_file':'Document'}
+  widgets = {
+   'name':forms.TextInput(attrs={'class':'form-control'}),
+   'dob':forms.DateInput(attrs={'class':'form-control', 'id':'datepicker'}),
+   'locality':forms.TextInput(attrs={'class':'form-control'}),
+   'ci
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   $( function() {
+     $( "#datepicker" ).datepicker();
+   } );
+  </script>
+
+
+
+
+
+
+**************************************
+
+pip install pillow
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+You are viewing Neelam Choudhary's screen
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+00:42:25
+
+pip install pillow
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+
+Neelam Choudhary
+
+
+You are viewing Neelam Choudhary's screen
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+00:42:25
+
+pip install pillow
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+
+Neelam Choudhary
+*********************
+You are viewing Neelam Choudhary's screen
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+00:42:25
+
+pip install pillow
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+<form action="" method="post" enctype="multipart/form-data" class="shadow p-5 bg-light">
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+
+Neelam Choudhary
+
+*************************
+You are viewing Neelam Choudhary's screen
+Chat
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+<form action="" method="post" enctype="multipart/form-data" class="shadow p-5 bg-light">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   $( function() {
+     $( "#datepicker" ).datepicker();
+   } );
+  </script>
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+
+Neelam Choudhary
+
+
+
+
+
+
+***********************************
+TKINERT
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    # messagebox.showinfo("message","button clicked")
+    messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack()
+button1.pack()
+window.mainloop()
+
+
+
+*********************************
+You are viewing Neelam Choudhary's screen
+Chat
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   $( function() {
+     $( "#datepicker" ).datepicker();
+   } );
+  </script>
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    # messagebox.showinfo("message","button clicked")
+    messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack()
+button1.pack()
+window.mainloop()
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    messagebox.showinfo("message","button clicked")
+    # messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack(side=tkinter.LEFT)
+button1.pack(side=tkinter.RIGHT)
+window.mainloop()
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+Neelam Choudhary
+
+
+from tkinter import *
+window=Tk()
+entry=Entry(fg="white",bg="green",width=60)
+entry.pack()
+text1=Text(fg="white",bg="green",width=30,height="20")
+text1.pack()
+window.mainloop()
+
+
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    messagebox.showinfo("message","button clicked")
+    # messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack(side=tkinter.LEFT)
+button1.pack(side=tkinter.RIGHT)
+window.mainloop()
+from tkinter import 
+
+
+****************************
+You are viewing Neelam Choudhary's screen
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+00:42:25
+
+pip install pillow
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+<form action="" method="post" enctype="multipart/form-data" class="shadow p-5 bg-light">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   $( function() {
+     $( "#datepicker" ).datepicker();
+   } );
+  </script>
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    # messagebox.showinfo("message","button clicked")
+    messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack()
+button1.pack()
+window.mainloop()
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+Neelam Choudhary
+
+
+***************************
+You are viewing Neelam Choudhary's screen
+Chat
+Neelam Choudhary
+To
+Everyone
+Hosts and Panelists
+00:42:25
+
+pip install pillow
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+<form action="" method="post" enctype="multipart/form-data" class="shadow p-5 bg-light">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   $( function() {
+     $( "#datepicker" ).datepicker();
+   } );
+  </script>
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    # messagebox.showinfo("message","button clicked")
+    messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack()
+button1.pack()
+window.mainloop()
+import tkinter
+from tkinter import  messagebox
+window=tkinter.Tk()
+label1=tkinter.Label(text="welcome again",bg="green",fg="white")
+def onclick():
+    messagebox.showinfo("message","button clicked")
+    # messagebox.showerror("message","button clicked")
+button1=tkinter.Button(text="click me",command=onclick)
+label1.pack(side=tkinter.LEFT)
+button1.pack(side=tkinter.RIGHT)
+window.mainloop()
+from tkinter import *
+window=Tk()
+entry=Entry(fg="white",bg="green",width=60)
+entry.pack()
+text1=Text(fg="white",bg="green",width=30,height="20")
+text1.pack()
+window.mainloop()
+import tkinter
+mywindow=tkinter.Tk()
+mywindow.geometry("400x450")
+name=tkinter.Label(text="Name :",bg="green",fg="white")
+name.grid(row=0,column=0,pady=2)
+name_entry=tkinter.Entry(width=30,font="Arial")
+name_entry.grid(row=0,column=1,pady=2)
+pwd=tkinter.Label(text="Password : ",bg="green",fg="white")
+pwd.grid(row=1,column=0,pady=2)
+pwd_entry=tkinter.Entry(width=30,show="*")
+pwd_entry.grid(row=1,column=1,pady=2)
+int=tkinter.Label(text="interest: ",bg="green",fg="white")
+int.grid(row=2,column=0,pady=2)
+int_entry=tkinter.Text(width=30,height=4)
+int_entry.grid(row=2,column=1,pady=2)
+button1=tkinter.Button(text="click me",bg="red",fg="white",height=5,width=24, activebackground="blue",activeforeground="black")
+button1.grid(row=3,column=1,pady=2)
+mywindow.mainloop()
+
+
+
+***********************
+You are viewing Neelam Choudhary's screen
+Chat
+import tkinter
+mywindow=tkinter.Tk()
+mywindow.geometry("400x450")
+name=tkinter.Label(text="Name :",bg="green",fg="white")
+name.grid(row=0,column=0,pady=2)
+name_entry=tkinter.Entry(width=30,font="Arial")
+name_entry.grid(row=0,column=1,pady=2)
+pwd=tkinter.Label(text="Password : ",bg="green",fg="white")
+pwd.grid(row=1,column=0,pady=2)
+pwd_entry=tkinter.Entry(width=30,show="*")
+pwd_entry.grid(row=1,column=1,pady=2)
+int=tkinter.Label(text="interest: ",bg="green",fg="white")
+int.grid(row=2,column=0,pady=2)
+int_entry=tkinter.Text(width=30,height=4)
+int_entry.grid(row=2,column=1,pady=2)
+button1=tkinter.Button(text="click me",bg="red",fg="white",height=5,width=24, activebackground="blue",activeforeground="black")
+button1.grid(row=3,column=1,pady=2)
+mywindow.mainloop()
+import tkinter
+mywindow=tkinter.Tk()
+mywindow.geometry("400x450")
+name=tkinter.Label(text="Name :",bg="green",fg="white")
+name_entry=tkinter.Entry(width=30,font="Arial")
+pwd=tkinter.Label(text="Password : ",bg="green",fg="white")
+pwd_entry=tkinter.Entry(width=30,show="*")
+int=tkinter.Label(text="interest: ",bg="green",fg="white")
+int_entry=tkinter.Text(width=30,height=4)
+def onclick():
+    name1=name_entry.get()
+    name.config(text=name1)
+    name_entry.delete(0,tkinter.END)
+    name_entry.insert(0,"New ")
+
+
+
+button1=tkinter.Button(text="click me",bg="red",fg="white",height=5,width=24, activebackground="blue",activeforeground="black",command=onclick)
+button1.grid(row=3,column=1,pady=2)
+name.grid(row=0,column=0,pady=2)
+name_entry.grid(row=0,column=1,pady=2)
+pwd.grid(row=1,column=0,pady=2)
+pwd_entry.grid(row=1,column=1,pady=2)
+int.grid(row=2,column=0,pady=2)
+int_entry.grid(row=2,column=1,pady=2)
+mywindow.mainloop()
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+Neelam Choudhary
+
+
+*****************
+Neelam Choudhary
+Chat
+import tkinter
+mywindow=tkinter.Tk()
+mywindow.geometry("400x450")
+name=tkinter.Label(text="Name :",bg="green",fg="white")
+name.grid(row=0,column=0,pady=2)
+name_entry=tkinter.Entry(width=30,font="Arial")
+name_entry.grid(row=0,column=1,pady=2)
+pwd=tkinter.Label(text="Password : ",bg="green",fg="white")
+pwd.grid(row=1,column=0,pady=2)
+pwd_entry=tkinter.Entry(width=30,show="*")
+pwd_entry.grid(row=1,column=1,pady=2)
+int=tkinter.Label(text="interest: ",bg="green",fg="white")
+int.grid(row=2,column=0,pady=2)
+int_entry=tkinter.Text(width=30,height=4)
+int_entry.grid(row=2,column=1,pady=2)
+button1=tkinter.Button(text="click me",bg="red",fg="white",height=5,width=24, activebackground="blue",activeforeground="black")
+button1.grid(row=3,column=1,pady=2)
+mywindow.mainloop()
+import tkinter
+mywindow=tkinter.Tk()
+mywindow.geometry("400x450")
+name=tkinter.Label(text="Name :",bg="green",fg="white")
+name_entry=tkinter.Entry(width=30,font="Arial")
+pwd=tkinter.Label(text="Password : ",bg="green",fg="white")
+pwd_entry=tkinter.Entry(width=30,show="*")
+int=tkinter.Label(text="interest: ",bg="green",fg="white")
+int_entry=tkinter.Text(width=30,height=4)
+def onclick():
+    name1=name_entry.get()
+    name.config(text=name1)
+    name_entry.delete(0,tkinter.END)
+    name_entry.insert(0,"New ")
+
+
+
+button1=tkinter.Button(text="click me",bg="red",fg="white",height=5,width=24, activebackground="blue",activeforeground="black",command=onclick)
+button1.grid(row=3,column=1,pady=2)
+name.grid(row=0,column=0,pady=2)
+name_entry.grid(row=0,column=1,pady=2)
+pwd.grid(row=1,column=0,pady=2)
+pwd_entry.grid(row=1,column=1,pady=2)
+int.grid(row=2,column=0,pady=2)
+int_entry.grid(row=2,column=1,pady=2)
+mywindow.mainloop()
+# a=int_entry.get("1.0","end")
+    # print(a)
+    # int_entry.delete("2.0","2.5")
+    # int_entry.insert("1.2","Python")
+
+Who can see your messages? Recording On
+To:
+Type message here ...
+
+
+
+
+
+
